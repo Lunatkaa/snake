@@ -11,7 +11,7 @@ grid_height = screen_height / grid_size
 
 up = (0, -1)
 down = (0, -1)
-left = (-1, 0)
+left = (-1, 0)2
 right = (1, 0)
 
 
