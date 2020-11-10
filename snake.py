@@ -14,8 +14,9 @@ DOWN = (0, 1)
 LEFT = (-1, 0)
 RIGHT = (1, 0)
 
-file_read = open('highscore.txt', 'r')
 file_write = open('highscore.txt', 'w')
+file_read = open('highscore.txt', 'r')
+file_write.write('1')
 
 
 class Snake:
@@ -52,7 +53,6 @@ class Snake:
         self.positions = [((SCREEN_WIDTH / 2), (SCREEN_HEIGHT / 2))]
         self.direction = random.choice([UP, DOWN, RIGHT, LEFT])
         self.score = 0
-        Highscore.check_highscore(file_read, self.score)
 
     def draw(self, surface):
         for p in self.positions:
@@ -139,17 +139,6 @@ def main():
         text = myfont.render(f"Score {snake.score}", 1, (0, 0, 0))
         screen.blit(text, (5, 10))
         pygame.display.update()
-
-
-class Highscore:
-    def check_highscore(self, file, score):
-        if score > int(file_read.read()):
-            self.write_highscore(file_write, score)
-        else:
-            return
-
-    def write_highscore(self, file, score):
-        file.write(score)
 
 
 main()
