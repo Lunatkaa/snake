@@ -15,8 +15,6 @@ LEFT = (-1, 0)
 RIGHT = (1, 0)
 
 file_write = open('highscore.txt', 'w')
-file_read = open('highscore.txt', 'r')
-file_write.write('1')
 
 
 class Snake:
@@ -53,6 +51,7 @@ class Snake:
         self.positions = [((SCREEN_WIDTH / 2), (SCREEN_HEIGHT / 2))]
         self.direction = random.choice([UP, DOWN, RIGHT, LEFT])
         self.score = 0
+        file_write.write('hainwan')
 
     def draw(self, surface):
         for p in self.positions:
@@ -125,7 +124,7 @@ def main():
     myfont = pygame.font.SysFont('monospace', 30)
 
     while True:
-        clock.tick(10)
+        clock.tick(8)
         snake.handle_keys()
         draw_grid(surface)
         snake.move()
