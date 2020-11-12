@@ -14,8 +14,6 @@ DOWN = (0, 1)
 LEFT = (-1, 0)
 RIGHT = (1, 0)
 
-file_write = open('highscore.txt', 'w')
-
 
 class Snake:
     def __init__(self):
@@ -51,7 +49,6 @@ class Snake:
         self.positions = [((SCREEN_WIDTH / 2), (SCREEN_HEIGHT / 2))]
         self.direction = random.choice([UP, DOWN, RIGHT, LEFT])
         self.score = 0
-        file_write.write('hainwan')
 
     def draw(self, surface):
         for p in self.positions:
